@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="widht=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+  <h2>testh2</h2>
+  <button id="button">Test</button>
+  <div id="container"></div>
 
-    <body></body>
+  <script>
+    const button = document.getElementById("button");
+    const container = document.getElementById("container");
+
+    button.innerHTML = "abs";
+    console.log(button.innerHTML);
+
+    // Создаём текстовые поля
+    const textBox1 = document.createElement("input");
+    textBox1.type = "text";
+    textBox1.placeholder = "Введите текст 1";
+    container.appendChild(textBox1);
+
+    const textBox2 = document.createElement("input");
+    textBox2.type = "text";
+    textBox2.placeholder = "Введите текст 2";
+    container.appendChild(textBox2);
+
+    // Обработка нажатия на кнопку
+    button.addEventListener("click", () => {
+        const text1 = textBox1.value;
+        const text2 = textBox2.value;
+        alert("Вы ввели:\n " + text1 + "\n " + text2);
+    });
+  </script>
+</body>
 </html>
